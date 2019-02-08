@@ -46,7 +46,7 @@ impl GuestAddress {
         GuestAddress(self.0 + offset)
     }
 
-    /// Returns the result of the subtraction of None if there is underflow.
+    /// Returns the result of the subtraction or None if there is underflow.
     pub fn checked_sub(&self, other: usize) -> Option<GuestAddress> {
         self.0.checked_sub(other).map(GuestAddress)
     }
